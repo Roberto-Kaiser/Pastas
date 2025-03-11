@@ -1,0 +1,387 @@
+LISTA DE EXERCÍCIOS BANCO DE DADOS (PYTON)
+EX1:
+INPUT:
+
+num1=float(input("Digite o primeiro número: "))
+
+num2=float(input("Digite o segundo número: "))
+
+soma=num1+num2
+
+print("A soma dos números é:", soma)
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 16
+A soma dos números é: 44.0
+
+=== Code Execution Successful ===
+
+EX2:
+INPUT:
+
+num1=float(input("Digite o primeiro número: "))
+
+num2=float(input("Digite o segundo número: "))
+
+sub=num1-num2
+
+print("A subtração dos números é:", sub)
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 16
+A subtração dos números é: 12.0
+
+=== Code Execution Successful ===
+
+EX3:
+IMPUT:
+
+num1=float(input("Digite o primeiro número: "))
+
+num2=float(input("Digite o segundo número: "))
+
+mul=num1*num2
+
+print("A multiplicação dos números é:", mul)
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 16
+A multiplicação dos números é: 448.0
+
+=== Code Execution Successful ===
+
+EX4:
+INPUT:
+
+num1=float(input("Digite o primeiro número: "))
+
+num2=float(input("Digite o segundo número: "))
+
+if num2==0:
+ print("O denominador não pode ser zero!")
+
+div=num1/num2
+
+print("A divisão dos números é:", div)
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 16
+A divisão dos números é: 1.75
+
+=== Code Execution Successful ===
+
+EX5:
+INPUT:
+
+num1=float(input("Digite o primeiro número: "))
+
+num2=float(input("Digite o segundo número: "))
+
+if num1==num2:
+    print("Parabéns, os números são iguais!")
+    
+else:
+    print("Os números são diferentes, que pena!")
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 28
+Parabéns, os números são iguais!
+
+=== Code Execution Successful ===
+
+EX6:
+INPUT:
+
+num1=float(input("Digite o primeiro número: "))
+
+num2=float(input("Digite o segundo número: "))
+
+if num1!=num2:
+    print("Os números são diferentes! Que legal.")
+    
+else:
+    print("Os números são iguais! Que pena.")
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 16
+Os números são diferentes! Que legal.
+
+=== Code Execution Successful ===
+
+EX7:
+INPUT:
+
+import random
+
+def adivinhe_o_numero():
+    numero_secreto = random.randint(1, 50)
+    tentativas = 0
+    
+    while True:
+        try:
+            palpite = int(input("Digite um número entre 1 e 50: "))
+            tentativas += 1
+            
+            if palpite < numero_secreto:
+                print("Muito baixo! Tente novamente.")
+            elif palpite > numero_secreto:
+                print("Muito alto! Tente novamente.")
+            else:
+                print(f"Parabéns! Você acertou o número {numero_secreto} em {tentativas} tentativas.")
+                break  
+        except ValueError:
+            print("Por favor, digite um número válido.")
+
+
+adivinhe_o_numero()
+
+OUTPUT:
+
+Digite um número entre 1 e 50: 12
+Muito baixo! Tente novamente.
+Digite um número entre 1 e 50: 40
+Muito baixo! Tente novamente.
+Digite um número entre 1 e 50: 45
+Muito alto! Tente novamente.
+Digite um número entre 1 e 50: 44
+Parabéns! Você acertou o número 44 em 4 tentativas.
+
+=== Code Execution Successful ===
+
+EX8:
+INPUT:
+
+import time
+
+def contagem_regressiva():
+    contador = 10
+    
+    while contador > 0:
+        print(contador)
+        time.sleep(0.5)  
+        contador -= 1  
+    
+    print("CABÔ! :)")
+
+contagem_regressiva()
+
+OUTPUT:
+
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+CABÔ! :)
+
+=== Code Execution Successful ===
+
+EX9:
+INPUT:
+
+n1=float(input("Digite o primeiro número: "))
+n2=float(input("Digite o segundo número: "))
+
+print("Operações: ")
+print("1 - Adição")
+print("2 - Subtração")
+print("3 - Multiplicação")
+print("4 - Divisão")
+
+op=int(input("Operação: "))
+
+if op==1:
+    resultado=n1+n2
+
+elif op==2:
+    resultado=n1-n2
+
+elif op==3:
+    resultado=n1*n2
+
+elif op==4:
+    resultado=n1/n2
+    
+print("O resultado é: ", resultado)
+
+OUTPUT:
+
+Digite o primeiro número: 28
+Digite o segundo número: 16
+Operações: 
+1 - Adição
+2 - Subtração
+3 - Multiplicação
+4 - Divisão
+Operação: 4
+O resultado é:  1.75
+
+=== Code Execution Successful ===
+
+EX10
+INPUT:
+
+def parounao():
+    try:
+        numero = int(input("Digite um número: "))
+
+        if numero % 2 == 0:
+            print(f"O número {numero} é par.")
+        else:
+            print(f"O número {numero} é ímpar.")
+    except ValueError:
+        print("Erro: Por favor, insira um número inteiro válido.")
+
+parounao()
+
+OUTPUT:
+
+Digite um número: 28
+O número 28 é par.
+
+=== Code Execution Successful ===
+
+EX média de notas(sem número):
+INPUT:
+
+def calcular_media():
+    notas = [] 
+    while True:
+        try:
+            nota = float(input("Digite uma nota (ou 0 para finalizar): "))
+            
+            if nota == 0:
+                break
+            
+            notas.append(nota)
+        except ValueError:
+            print("Erro: Por favor, insira um valor numérico válido.")
+    
+    if notas:
+        media = sum(notas) / len(notas)
+        print(f"A média das notas é: {media:.2f}")
+    else:
+        print("Nenhuma nota válida foi inserida.")
+
+calcular_media()
+
+OUTPUT:
+
+Digite uma nota (ou 0 para finalizar): 10
+Digite uma nota (ou 0 para finalizar): 7
+Digite uma nota (ou 0 para finalizar): 9
+Digite uma nota (ou 0 para finalizar): 0
+A média das notas é: 8.67
+
+=== Code Execution Successful ===
+
+EX11:
+INPUT:
+
+idade=int(input("Digite a sua idade: "))
+
+if idade>=18:
+    print("Você é maior de idade! Já pode responder! :)")
+    
+else:
+    print("Você ainda é menor de idade!")
+
+OUTPUT:
+
+Digite a sua idade: 16
+Você ainda é menor de idade!
+
+=== Code Execution Successful ===
+
+EX12:
+INPUT:
+
+import random
+import string
+
+def gerar_senha(tamanho=8):
+
+    caracteres = string.ascii_letters + string.digits
+    
+    senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
+    
+    return senha
+
+senha_gerada = gerar_senha()
+print(f"A senha gerada é: {senha_gerada}")
+
+OUTPUT:
+
+A senha gerada é: 8pX1lP3Q
+
+=== Code Execution Successful ===
+
+EX13:
+INPUT:
+
+import time
+
+a, b = 0, 1
+
+contador = 0
+
+n = 10
+
+print("Os 10 primeiros números da sequência de Fibonacci:")
+
+while contador < n:
+    print(a)
+    a, b = b, a + b
+    contador += 1
+    time.sleep(0.5)
+
+OUTPUT:
+
+Os 10 primeiros números da sequência de Fibonacci:
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
+=== Code Execution Successful ===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
